@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1
+        const nums1 = [1,2,3,4];
+        function sumUp(arr) {
+            let sum=0;
+            for(let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            return sum
+        }
+        let sumed = sumUp(nums1);
+        console.log(sumed);
+
+        // 2
+        function multiplying(arr) {
+            let multi=1;
+            for(let i = 0; i < arr.length; i++) {
+                multi *= arr[i];
+            }
+            return multi
+        }
+        let multiplied = multiplying(nums1);
+        console.log(multiplied);
+
+        //3
+        let digit;
+        let sum=0;
+        function sumDigits(num) {
+            while(num>0) {
+                digit=num%10;
+                num=parseInt(num/10);
+                sum+=digit;
+            }
+            return sum;
+        }
+        let sumedDig = sumDigits(2753)
+
+        console.log(sumedDig);
+
+        // 4
+        let ages = [18, 24, 28, 35, 41, 2];
+        // a
+        function minimum(arr){
+            for(let i=0; i<arr.length; i++) {
+                let min=arr[0];
+                if(arr[i]<min){
+                    min=arr[i];
+                }
+                return min;
+            }
+        }
+        console.log(minimum(ages));
+        // b
+        function maximum(arr) {
+            let max=0;
+            for(let i=0; i<arr.length; i++) {
+                if(arr[i]>max) {
+                    max=arr[i];
+                }
+            }
+            return max;
+        }
+        console.log(maximum(ages));
+        // c
+        function sumIt(arr) {
+            let sum=0;
+            for(let i=0; i<arr.length; i++) {
+                sum+=arr[i];
+            }
+            return sum;
+        }
+        console.log(sumIt(ages));
+        // d
+        let avg;
+        function avgIt(arr, sumFunc) {
+            for(let i=0; i<arr.length; i++) {
+                let sum = sumFunc(arr);
+                avg=(sum/arr.length);
+            }
+            return avg.toFixed(2);
+        }
+        console.log(avgIt(ages,sumIt));
+
+        // 5
+        const inputNumsArr = [];
+        let i=0;
+        while( i<=2) {
+            const inputNumber = Number(prompt("Insert a number"));
+                inputNumsArr.push(inputNumber);
+                i++
+        }
+        console.log(inputNumsArr);
+        // a
+        let multi=1;
+        for(let i=0; i<inputNumsArr.length; i++) {
+            multi*=inputNumsArr[i];
+            console.log(multi);
+        }
+        // b
+        let sum2=0;
+        for(let i=0; i<inputNumsArr.length; i++) {
+            sum2+=inputNumsArr[i];
+            console.log(sum2);
+        }
+        // c
+        let intger = [];
+        let float = [];
+        for(let i=0; i<inputNumsArr.length; i++) {
+            if(inputNumsArr[i] % 2 === 0) {
+                intger.push(inputNumsArr[i]);
+            }else{
+                float.push(inputNumsArr[i]);
+            }
+        }
+        console.log(`intger: ${intger}, float: ${float}`);
+
+
+
+
+
+
+    </script>
+</body>
+</html>
